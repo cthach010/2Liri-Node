@@ -21,33 +21,33 @@ var spotify = new Spotify(keys.spotify);
 // };
 
 // searching twitter 
-// var getMyTwitter = function () {
-// 	var client = new Twitter(keys.twitter);
+var getMyTwitter = function () {
+	var client = new Twitter(keys.twitter);
 
-// 	//Pull the most recent tweets
-// 	var params = { screen_name: 'Christina Thach' };
-// 	client.get('statuses/user_timeline', params, function (error, tweets, response) {
-// 		if (error) { error };
+	//Pull the most recent tweets
+	var params = { screen_name: 'Christina Thach' };
+	client.get('statuses/user_timeline', params, function (error, tweets, response) {
+		if (error) { error };
 
-// 		console, log("===================");
-// 		console.log("Here are the most recent tweets");
+		console.log("===================");
+		console.log("Here are the most recent tweets");
 
-// 		for (var i = 0; i < tweets.length; i++) {
+		for (var i = 0; i < tweets.length; i++) {
 
 
-// 			console.log("_____________________________________________");
-// 			console.log("Tweeted on: " + tweets[i].created_at);
-// 			console.log(tweets[i].text);
+			console.log("_____________________________________________");
+			console.log("Tweeted on: " + tweets[i].created_at);
+			console.log(tweets[i].text);
 
-// 		}
+		}
 
-// 	}
-// 	);
-
+	}
+	);
+}
 	// searching spotify
 	var getMySong = function (songTitle) {
 		console.log("thisfunction has been called");
-		
+
 		spotify.search(
 			{ type: 'track', query: songTitle, limit: 5 },
 			function (err, data) {
@@ -56,14 +56,14 @@ var spotify = new Spotify(keys.spotify);
 				}
 				var songs = data.tracks.items;
 
-				for (var i = 0; i< songs.length; i++){
+				for (var i = 0; i < songs.length; i++) {
 					console.log(i);
 					console.log("song name: " + songs[i].name);
 					console.log("preview song: " + songs[i].preview_url);
 					console.log("album: " + songs[i].album.name);
 					console.log("-----------------------------------")
-			}
-				
+				}
+
 
 			});
 
